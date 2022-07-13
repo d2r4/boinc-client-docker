@@ -6,7 +6,7 @@
 # or `nvidia`) since those depend on the base one. 
 #
 
-
+# Enable builds for other architectures (i.e. arm32v7, arm64v8)
 docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
 
 # Base images
