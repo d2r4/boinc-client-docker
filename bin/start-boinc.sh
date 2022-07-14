@@ -1,5 +1,7 @@
 #!/bin/bash
-if [ ! -z "${CC_CONFIG}" ]; then echo $CC_CONFIG > /var/lib/boinc/cc_config.xml; fi
+if [[ ! -z "${CC_CONFIG}" && ! -f /var/lib/boinc/cc_config.xml ]]; \
+then echo "Creating cc_config.xml" && echo $CC_CONFIG > /var/lib/boinc/cc_config.xml; \
+fi
 
 # Configure the GUI RPC
 echo $BOINC_GUI_RPC_PASSWORD > /var/lib/boinc/gui_rpc_auth.cfg
